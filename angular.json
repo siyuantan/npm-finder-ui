@@ -106,6 +106,5 @@
         }
       }
     }
-  },
-  "defaultProject": "npm-finder-ui"
+  }
 }
