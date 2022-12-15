@@ -29,6 +29,12 @@ html, body {
 .nav-bar-contents {
   width: 85%;
   height: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content auto 1fr;
   align-items: center;
+}
+
+.search-bar {
+  width: 100%;
+  margin-left: 16px;
 }
