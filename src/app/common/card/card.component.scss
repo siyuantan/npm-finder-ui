@@ -1,10 +1,16 @@
 .card {
+  margin: 0.5rem 0;
   display: grid;
   grid-template: 
-    [row1-start] "header header header" [row1-end]
-    [row2-start] "contents contents contents" 25px [row2-end]
-    [row3-start] "contents contents contents" 25px [row3-end]
-    [row4-start] "footer footer footer" 25px [row4-end];
+  [row1-start] "header header header" [row1-end]
+  [row2-start] "lastUpdated lastUpdated lastUpdated" [row2-end]
+  [row3-start] "author author author" [row3-end]
+  [row4-start] "keyword keyword keyword" [row4-end];
+  min-height: 70%;
+}
+
+.span-col-2 {
+  grid-column: span 2;
 }
 
 .span-col-3 {

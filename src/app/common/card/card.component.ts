@@ -14,4 +14,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  displayDate(date: string) {
+    return new Date(date).toLocaleString();
+  }
 }

@@ -1,18 +1,16 @@
 <mat-card class="card">
-  <div class="package-name span-col-3">
-    <h1>{{packageDetail.name}}</h1>
+  
+  <h1 class="package-name span-col-2">{{packageDetail.name}}</h1>
+  <h3 class="version-number">{{packageDetail.version}}</h3>
+  
+  <div class="last-modified span-col-3">
+    {{displayDate(packageDetail.date)}}
   </div>
-  <!-- <div class="version-number">
-    {{packageDetail.dist_tags[latest]}}
-  </div> -->
-  <!-- <div class="last-modified">
-    {{packageDetail.time.modified}}
-  </div> -->
-  <div class="maintainers" *ngFor="let maintainer of packageDetail.maintainers;">
-    {{maintainer.username}}
+  <div class="author" *ngIf="packageDetail.author">
+    {{packageDetail.author.name || '-'}}
   </div>
-  <div class="keywords" *ngFor="let keyword of packageDetail.keywords;">
-    {{keyword}}
-  </div>
+  <div class="author-email span-col-2" *ngIf="packageDetail.author">
+    {{packageDetail.author.email || '-'}}
+  </div> 
   
 </mat-card>

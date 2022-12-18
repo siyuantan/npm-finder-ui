@@ -41,8 +41,10 @@ html, body {
 
 .content-body {
   width: 80%;
+  height: fit-content;
   margin: 0 auto;
   margin-top: 0px;
+  margin-bottom: 0.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
