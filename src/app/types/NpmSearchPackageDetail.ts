@@ -1,6 +1,6 @@
-import { INpmPackageDetail } from "./INpmPackageDetail";
+import { INpmSearchPackageDetail } from "./INpmSearchPackageDetail";
 
-export class NpmPackageDetail {
+export class NpmSearchPackageDetail {
   public name: string
   public scope: string
   public version: string
@@ -11,7 +11,7 @@ export class NpmPackageDetail {
   public author: {name: string, email: string, publisher: string}
   public maintainers: {username: string, email: string}[]
   
-  constructor(npmPackageDetail: INpmPackageDetail) {
+  constructor(npmPackageDetail: INpmSearchPackageDetail) {
     this.name = npmPackageDetail.name;
     this.scope = npmPackageDetail.scope;
     this.version = npmPackageDetail.version;

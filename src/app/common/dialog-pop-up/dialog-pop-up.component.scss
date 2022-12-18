@@ -1,0 +1,19 @@
+.dialog {
+  // display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr;
+  // grid-template-rows: auto;
+}
+
+.keywords {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.span-col-5 {
+  grid-column: span 5;
+}
+
+#close-btn {
+  width: 100%;
+}

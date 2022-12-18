@@ -1,7 +1,7 @@
-import { INpmPackageDetail } from "./INpmPackageDetail";
+import { INpmSearchPackageDetail } from "./INpmSearchPackageDetail";
 
 export interface INpmPackageSearchDetail {
-  objects: {package: INpmPackageDetail}[],
+  objects: {package: INpmSearchPackageDetail}[],
   time: string,
   total: number
 }

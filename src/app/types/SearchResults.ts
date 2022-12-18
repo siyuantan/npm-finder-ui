@@ -1,10 +1,10 @@
-import { NpmPackageDetail } from "./NpmPackageDetail";
+import { NpmSearchPackageDetail } from "./NpmSearchPackageDetail";
 
 export class SearchResults {
   public totalNumOfResults: number;
-  public results: NpmPackageDetail[];
+  public results: NpmSearchPackageDetail[];
 
-  constructor(totalNumOfResults: number, results: NpmPackageDetail[]) {
+  constructor(totalNumOfResults: number, results: NpmSearchPackageDetail[]) {
     this.totalNumOfResults = totalNumOfResults;
     this.results = results;
   }   

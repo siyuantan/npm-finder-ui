@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NpmPackageDetail } from 'src/app/types/NpmPackageDetail';
+import { MatDialog } from '@angular/material/dialog';
+import { ResourceService } from 'src/app/resources.service';
+import { INpmPackageDetail } from 'src/app/types/INpmPackageDetail';
+import { NpmSearchPackageDetail } from 'src/app/types/NpmSearchPackageDetail';
+import { DialogPopUpComponent } from '../dialog-pop-up/dialog-pop-up.component';
 
 @Component({
   selector: 'app-card',
@@ -7,14 +11,29 @@ import { NpmPackageDetail } from 'src/app/types/NpmPackageDetail';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  @Input() packageDetail!: NpmPackageDetail;
+  @Input() packageDetail!: NpmSearchPackageDetail;
+  packageMoreDetail!: INpmPackageDetail;
 
-  constructor() { }
+  constructor(public dialog: MatDialog, private resource: ResourceService) { }
 
   ngOnInit(): void {
   }
 
   displayDate(date: string) {
     return new Date(date).toLocaleString();
+  }
+
+  openDialog() {
+    this.getMoreDetails();
+    
+  }
+
+  getMoreDetails() {
+    this.resource.getPackageDetail(this.packageDetail.name).subscribe((result) => {
+      this.packageMoreDetail = result;
+      this.dialog.open(DialogPopUpComponent, {
+        data: this.packageMoreDetail
+      });
+    });
   }
 }

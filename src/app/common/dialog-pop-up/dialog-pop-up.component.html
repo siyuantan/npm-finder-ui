@@ -1,0 +1,21 @@
+<div class="dialog">
+  <h1 mat-dialog-title>{{data.name}}</h1>
+  <div mat-dialog-content>Description: {{data.description || '-'}}</div>
+  <span class="span-col-5">Maintainers: </span>
+  <div *ngFor="let maintainer of data.maintainers">
+    <div class="maintainers">{{maintainer.name}} | {{maintainer.email}}</div>
+  </div>
+  <span class="span-col-5">README: </span>
+  <div mat-dialog-content>{{data.readme || '-'}}</div>
+  <div mat-dialog-content>License: {{data.license || '-'}}</div>
+  
+  <div class="keywords">
+    <span class="span-col-5">Keywords: </span>
+    <ng-container *ngFor="let keyword of data.keywords;">
+      <span>{{keyword}}</span>
+    </ng-container>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close id="close-btn">Close</button>
+  </div>
+</div>

@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
-import { NpmPackageDetail } from './types/NpmPackageDetail';
+import { NpmSearchPackageDetail } from './types/NpmSearchPackageDetail';
 import { catchError, map } from 'rxjs/operators';
 import { INpmPackageSearchDetail } from './types/INpmPackageSearchDetail';
 import { SearchResults } from './types/SearchResults';
+import { INpmPackageDetail } from './types/INpmPackageDetail';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +20,15 @@ export class ResourceService {
         map((response) => {
           const total = response.total;
           const all = response.objects
-            .map(packageDetail => new NpmPackageDetail(packageDetail.package));
+            .map(packageDetail => new NpmSearchPackageDetail(packageDetail.package));
           return new SearchResults(total, all);
         }),
         catchError(error => throwError(() => error))
       );
-    
+  }
+
+  getPackageDetail(packageName: string): Observable<INpmPackageDetail> {
+    return this.http.get<INpmPackageDetail>(`https://registry.npmjs.org/${packageName}`);
   }
 
 }
