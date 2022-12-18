@@ -2,6 +2,11 @@
   <div class="nav-bar-contents">
     <img id="app-icon" src="../assets/npm-icon.svg">
     <h1 class="title">NPM Viewer</h1>
-    <search-bar class="search-bar"></search-bar>
+    <search-bar class="search-bar" (onSubmitSearch)="submitSearch($event)"></search-bar>
   </div>
 </header>
+<body class="content-body">
+  <ng-container *ngFor="let packageDetail of searchResults;">
+    <app-card [packageDetail]="packageDetail"></app-card>
+  </ng-container>
+</body>

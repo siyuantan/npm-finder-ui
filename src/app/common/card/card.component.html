@@ -1,0 +1,18 @@
+<mat-card class="card">
+  <div class="package-name span-col-3">
+    <h1>{{packageDetail.name}}</h1>
+  </div>
+  <!-- <div class="version-number">
+    {{packageDetail.dist_tags[latest]}}
+  </div> -->
+  <!-- <div class="last-modified">
+    {{packageDetail.time.modified}}
+  </div> -->
+  <div class="maintainers" *ngFor="let maintainer of packageDetail.maintainers;">
+    {{maintainer.username}}
+  </div>
+  <div class="keywords" *ngFor="let keyword of packageDetail.keywords;">
+    {{keyword}}
+  </div>
+  
+</mat-card>
