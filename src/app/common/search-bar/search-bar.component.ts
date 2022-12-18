@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  value = 'Clear me';
+  searchInput = '';
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  submitSearch() {
+    console.warn('Submit entered;', this.searchInput);
+  }
 }

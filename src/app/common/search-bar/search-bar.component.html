@@ -1,11 +1,11 @@
 <div id="search-bar-wrapper">
-  <mat-form-field class="example-form-field">
+  <mat-form-field class="example-form-field" >
     <mat-label>Search packages</mat-label>
     <mat-icon matPrefix>search</mat-icon>
-    <input matInput type="search" placeholder="Search here">
-    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+    <input matInput type="search" placeholder="Search here" [(ngModel)]="searchInput" (keyup.enter)="submitSearch()">
+    <button *ngIf="searchInput" matSuffix mat-icon-button aria-label="Clear" (click)="searchInput=''">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
-  <button mat-raised-button color="primary" id="search-btn">Search</button>
+  <button mat-raised-button color="primary" id="search-btn" (click)="submitSearch()">Search</button>
 </div>
