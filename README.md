@@ -1,6 +1,14 @@
 # NpmFinderUi
+## Dependencies
+* nodeJS v16.13.0
+* npm v8.1.0
+* Angular CLI v14.2.12
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+## Steps to setup
+1. Ensure that all the dependencies mentioned aboved are installed. Check using `node -v` or `npm -v` commands to check version installed.
+2. To download all npm dependencies for this project, use your preferred terminal run `npm i` in the root folder `npm-finder-ui`
+3. When npm dependecies are installed successfully, to run this project on local, use the `ng serve` command to run on your local machine. Application will run on port `4200`. You can use `--port <port number>` flag to run the application on different port.
+
 
 ## Development server
 
@@ -8,20 +16,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng g c component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
