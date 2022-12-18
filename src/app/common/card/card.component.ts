@@ -24,11 +24,10 @@ export class CardComponent implements OnInit {
   }
 
   openDialog() {
-    this.getMoreDetails();
-    
+    this.getMoreDetailsAndOpenDialog();
   }
 
-  getMoreDetails() {
+  getMoreDetailsAndOpenDialog() {
     this.resource.getPackageDetail(this.packageDetail.name).subscribe((result) => {
       this.packageMoreDetail = result;
       this.dialog.open(DialogPopUpComponent, {
