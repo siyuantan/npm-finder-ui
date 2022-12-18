@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
-import { NpmSearchPackageDetail } from './types/NpmSearchPackageDetail';
+import { NpmSearchPackageDetail } from '../types/NpmSearchPackageDetail';
 import { catchError, map } from 'rxjs/operators';
-import { INpmPackageSearchDetail } from './types/INpmPackageSearchDetail';
-import { SearchResults } from './types/SearchResults';
-import { INpmPackageDetail } from './types/INpmPackageDetail';
+import { INpmPackageSearchDetail } from '../types/INpmPackageSearchDetail';
+import { SearchResults } from '../types/SearchResults';
+import { INpmPackageDetail } from '../types/INpmPackageDetail';
 
 @Injectable({
   providedIn: 'root'

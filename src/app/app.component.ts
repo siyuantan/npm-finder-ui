@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { ResourceService } from './resources.service';
+import { ResourceService } from './services/resources.service';
 import { SearchResults } from './types/SearchResults';
 
 @Component({

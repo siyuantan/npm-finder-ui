@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ResourceService } from 'src/app/resources.service';
+import { ResourceService } from 'src/app/services/resources.service';
 import { INpmPackageDetail } from 'src/app/types/INpmPackageDetail';
 import { NpmSearchPackageDetail } from 'src/app/types/NpmSearchPackageDetail';
 import { DialogPopUpComponent } from '../dialog-pop-up/dialog-pop-up.component';
