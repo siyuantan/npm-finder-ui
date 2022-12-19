@@ -1,7 +1,7 @@
 <header class="nav-bar">
   <div class="nav-bar-contents">
     <img id="app-icon" src="../assets/npm-icon.svg">
-    <h1 class="title">NPM Viewer</h1>
+    <h1 class="title">NPM Finder</h1>
     <search-bar class="search-bar" (onSubmitSearch)="submitSearch($event)"></search-bar>
   </div>
 </header>
@@ -19,7 +19,7 @@
              [pageSize]="pageSize"
              [disabled]="false"
              [showFirstLastButtons]="true"
-             [pageSizeOptions]="false ? pageSizeOptions : []"
+             [pageSizeOptions]="[]"
              [hidePageSize]="false"
              [pageIndex]="pageIndex"
              aria-label="Select page">

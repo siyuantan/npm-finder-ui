@@ -1,16 +1,41 @@
 import { TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { ResourceService } from './services/resources.service';
 
 describe('AppComponent', () => {
+  let mockResourceService = jasmine.createSpyObj('ResourceService', ['getSearchPackageByName', 'getPackageDetail']);
+
+  @Component({
+    selector: 'app-dialog-pop-up',
+    template: ''
+  })
+  class MockSearchBarComponent {
+  
+  }
+  
+  @Component({
+    selector: 'app-card',
+    template: ''
+  })
+  class MockCardComponent {
+  
+  }
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        MockSearchBarComponent,
+        MockCardComponent
       ],
+      providers: [
+        {provide: ResourceService, useValue: mockResourceService}
+      ]
     }).compileComponents();
   });
 
@@ -20,16 +45,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'npm-finder-ui'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('npm-finder-ui');
-  });
-
-  it('should render title', () => {
+  it('should render title `NPM Finder`', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('npm-finder-ui app is running!');
+    expect(compiled.querySelector('.title')?.textContent).toContain('NPM Finder');
   });
 });
+

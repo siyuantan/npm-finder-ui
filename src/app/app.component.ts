@@ -9,7 +9,6 @@ import { SearchResults } from './types/SearchResults';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'npm-finder-ui';
   searchKey = '';
   searchResults!: SearchResults;
   pageIndex = 0;

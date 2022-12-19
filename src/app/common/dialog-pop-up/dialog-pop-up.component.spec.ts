@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DialogPopUpComponent } from './dialog-pop-up.component';
 
-describe('DialogPopUpComponent', () => {
+xdescribe('DialogPopUpComponent', () => {
   let component: DialogPopUpComponent;
   let fixture: ComponentFixture<DialogPopUpComponent>;
 

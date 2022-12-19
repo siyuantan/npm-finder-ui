@@ -16,7 +16,6 @@ export class SearchBarComponent implements OnInit {
   }
 
   submitSearch() {
-    console.warn('Submit entered;', this.searchInput);
     this.onSubmitSearch.emit(this.searchInput);
   }
 }
